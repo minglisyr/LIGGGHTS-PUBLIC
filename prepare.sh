@@ -4,7 +4,7 @@ cd $HOME
 sudo apt update
 sudo apt upgrade -y
 sudo apt-get install -y git
-sudo apt-get install -y ffmpeg openmpi-bin libopenmpi-dev g++ build-essential cmake libgl1-mesa-dev libglu1-mesa-dev python3.12-venv
+sudo apt-get install -y vlc ffmpeg openmpi-bin libopenmpi-dev g++ build-essential cmake libgl1-mesa-dev libglu1-mesa-dev python3.12-venv
 
 python3 -m venv liggghts_env
 python3 -m venv paraview_env
