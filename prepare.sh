@@ -14,7 +14,7 @@ git clone https://github.com/minglisyr/LIGGGHTS-PUBLIC.git
 source liggghts_env/bin/activate
 sudo apt-get install -y libvtk9-dev
 cd $HOME/LIGGGHTS-PUBLIC/src
-make auto -j 12
+make auto -j 4
 deactivate
 
 cd $HOME
@@ -35,5 +35,7 @@ export XDG_RUNTIME_DIR="/tmp/runtime-mingli"
 liggghtspar() { mpirun -np $2 liggghts -in $1; }
 export -f liggghtspar
 ' >> ~/.bashrc && source ~/.bashrc
+
+cd $HOME
 
 
