@@ -9,6 +9,7 @@ sudo apt-get install -y ffmpeg openmpi-bin libopenmpi-dev g++ build-essential cm
 
 cd $HOME/LIGGGHTS-PUBLIC/src
 make auto -j 12
+
 cd /usr/bin
 sudo ln -s $HOME/LIGGGHTS-PUBLIC/src/lmp_auto liggghts
 
