@@ -80,13 +80,13 @@ BUILD_LIBRARIES = "NONE"
 # MPI specific variables
 #
 # MPI compiler
-#MPICXX_USR=/path/to/mpicxx
+MPICXX_USR=/usr/bin/mpicxx
 # Path that contains the includes (mpi.h)
 # Warning: this is the only *_INC_USR that does not use -I
-#MPI_INC_USR=/path/to/mpi/include
+MPI_INC_USR=/usr/lib/x86_64-linux-gnu/openmpi/include
 # Path that contains the MPI libraries
 # Warning: this is the only *_LIB_USR that does not use -L
-#MPI_LIB_USR=/path/to/mpi/lib
+MPI_LIB_USR=/usr/lib/x86_64-linux-gnu/openmpi/lib
 # Additional MPI libraries
 #MPI_ADDLIBS_USR=-lmpi
 # Additional MPI flags for compilation
