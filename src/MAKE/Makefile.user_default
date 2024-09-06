@@ -19,7 +19,7 @@ USE_CATALYST = "OFF"
 USE_VTK = "ON"
 # If you want to use the vtk output feature and did not install vtk yourself
 # then set the following to "ON" and uncomment it to allow for an automatic download and compilation
-AUTOINSTALL_VTK = "ON"
+AUTOINSTALL_VTK = "OFF"
 # SUPERQUADRICS: "ON" or "OFF"
 # Description: Enable superquadric particles (Note: requires boost)
 USE_SUPERQUADRICS = "ON"
@@ -127,9 +127,9 @@ MPI_LIB_USR=/usr/lib/x86_64-linux-gnu/openmpi/lib
 # VTK specific variables
 #
 # Path that contains the includes (vtkVersion.h)
-#VTK_INC_USR=-I/path/to/vtk/include
+VTK_INC_USR=-I/usr/include/vtk-9.1/
 # Path that contains the VTK libraries
-#VTK_LIB_USR=-L/path/to/vtk/lib
+VTK_LIB_USR=-L/usr/lib/x86_64-linux-gnu/
 # Additional VTK libraries to include
 #VTK_ADDLIBS_USR=
 # Appendix to the library names
