@@ -12,13 +12,13 @@ python3 -m venv paraview_env
 git clone https://github.com/minglisyr/LIGGGHTS-PUBLIC.git
 
 source liggghts_env/bin/activate
-sudo apt-get -y install libvtk9-dev
+sudo apt-get install -y libvtk9-dev
 cd $HOME/LIGGGHTS-PUBLIC/src
 make auto -j 12
 deactivate
 
 source paraview_env/bin/activate
-sudo apt-get install paraview
+sudo apt-get install -y paraview
 deactivate
 
 cd /usr/bin
