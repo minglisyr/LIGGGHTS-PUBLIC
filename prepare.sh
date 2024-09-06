@@ -17,6 +17,7 @@ cd $HOME/LIGGGHTS-PUBLIC/src
 make auto -j 12
 deactivate
 
+cd $HOME
 source paraview_env/bin/activate
 sudo apt-get install -y paraview
 deactivate
