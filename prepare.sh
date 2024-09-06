@@ -5,12 +5,23 @@ sudo apt-get install -y ffmpeg
 sudo apt-get install -y git
 
 git clone https://github.com/minglisyr/LIGGGHTS-PUBLIC.git
-git clone https://gitlab.kitware.com/vtk/vtk.git
 
-sudo apt-get install -y openmpi-bin libopenmpi-dev g++ build-essential cmake libgl1-mesa-dev libglu1-mesa-dev libvtk9-dev
+sudo apt-get install -y openmpi-bin libopenmpi-dev g++ build-essential cmake libgl1-mesa-dev libglu1-mesa-dev paraview
+sudo apt-get install -y libvtk9-dev paraview
+cd $HOME/LIGGGHTS-PUBLIC/src
+make auto
+cd /usr/bin
+sudo ln -s $HOME/LIGGGHTS-PUBLIC/src/lmp_auto liggghts
 
-cd LIGGGHTS/LIGGGHTS-PUBLIC/src
-make auto
-echo -e "\nexport LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/build/lib" >> ~/.bashrc
-source ~/.bashrc
-make auto
+echo '
+export DISPLAY=$(ip route | awk '"'/default/ { print \$3 }'"'):0.0
+export MESA_LOADER_DRIVER_OVERRIDE=i965
+export LIBGL_ALWAYS_SOFTWARE=1
+export XDG_RUNTIME_DIR="/tmp/runtime-mingli"
+
+#- shortcut to run liggghts in parallel
+liggghtspar() { mpirun -np $2 liggghts -in $1; }
+export -f liggghtspar
+' >> ~/.bashrc && source ~/.bashrc
+
+
