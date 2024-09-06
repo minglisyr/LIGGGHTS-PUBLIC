@@ -1,14 +1,25 @@
+#!/bin/bash
+
 cd $HOME
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 sudo apt-get install -y git
+sudo apt-get install -y ffmpeg openmpi-bin libopenmpi-dev g++ build-essential cmake libgl1-mesa-dev libglu1-mesa-dev python3.12-venv
+
+python3 -m venv liggghts_env
+python3 -m venv paraview_env
+
 git clone https://github.com/minglisyr/LIGGGHTS-PUBLIC.git
-sudo apt-get install -y ffmpeg openmpi-bin libopenmpi-dev g++ build-essential cmake libgl1-mesa-dev libglu1-mesa-dev paraview
 
-#sudo apt-get install -y libvtk9-dev paraview
-
+source liggghts_env/bin/activate
+sudo apt-get -y install libvtk9-dev
 cd $HOME/LIGGGHTS-PUBLIC/src
 make auto -j 12
+deactivate
+
+source paraview_env/bin/activate
+sudo apt-get install paraview
+deactivate
 
 cd /usr/bin
 sudo ln -s $HOME/LIGGGHTS-PUBLIC/src/lmp_auto liggghts
