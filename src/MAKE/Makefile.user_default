@@ -127,9 +127,9 @@ MPI_LIB_USR=/usr/lib/x86_64-linux-gnu/openmpi/lib
 # VTK specific variables
 #
 # Path that contains the includes (vtkVersion.h)
-VTK_INC_USR=-I/usr/include/vtk-9.1/
+VTK_INC_USR=-I$HOME/LIGGGHTS-PUBLIC/lib/vtk/src/Common/Core/
 # Path that contains the VTK libraries
-VTK_LIB_USR=-L/usr/lib/x86_64-linux-gnu/
+VTK_LIB_USR=-L$HOME/LIGGGHTS-PUBLIC/lib/vtk/build/lib/
 # Additional VTK libraries to include
 #VTK_ADDLIBS_USR=
 # Appendix to the library names
